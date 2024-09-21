@@ -1,5 +1,9 @@
+import 'package:dealmart/pages/bottom_nav.dart';
 import 'package:dealmart/pages/homepage.dart';
+import 'package:dealmart/pages/login_page.dart';
 import 'package:dealmart/pages/onbaording_page.dart';
+import 'package:dealmart/pages/product_details.dart';
+import 'package:dealmart/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: SignUpPage(),
     );
   }
 }
