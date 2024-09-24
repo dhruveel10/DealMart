@@ -151,7 +151,9 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     margin: EdgeInsets.only(right: 20.0),
                     padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         Image.asset(
@@ -179,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                               width: 30,
                             ),
                             Container(
-                              padding: EdgeInsets.all(1),
+                                padding: EdgeInsets.all(1),
                                 decoration: BoxDecoration(
                                     color: Color(0xFFfd6f3e),
                                     borderRadius: BorderRadius.circular(7)),
@@ -209,22 +211,27 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20.0),
-      margin: EdgeInsets.only(right: 20.0),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(
-            image,
-            height: 50,
-            width: 50,
-            fit: BoxFit.cover,
-          ),
-          Icon(Icons.arrow_forward)
-        ],
+    return GestureDetector(
+      onTap: (){
+
+      },
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        margin: EdgeInsets.only(right: 20.0),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(
+              image,
+              height: 50,
+              width: 50,
+              fit: BoxFit.cover,
+            ),
+            Icon(Icons.arrow_forward)
+          ],
+        ),
       ),
     );
   }

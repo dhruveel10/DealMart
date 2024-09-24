@@ -1,5 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:dealmart/pages/homepage.dart';
+import 'package:dealmart/pages/home_page.dart';
 import 'package:dealmart/pages/order_page.dart';
 import 'package:dealmart/pages/profile_page.dart';
 import 'package:flutter/material.dart';
