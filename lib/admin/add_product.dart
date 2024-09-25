@@ -240,6 +240,7 @@ class _AddProductState extends State<AddProduct> {
                   onPressed: () {
                     uploadProduct();
                   },
+                  // ignore: sort_child_properties_last
                   child: Text(
                     "Add Product",
                     style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),

@@ -17,4 +17,11 @@ class DatabaseMethods {
   Future <Stream<QuerySnapshot>> getCategoryProducts(String category) async{
     return await FirebaseFirestore.instance.collection(category).snapshots();
   }
+
+  Future orderDetails(Map<String, dynamic> orderInfoMap) async {
+    return await FirebaseFirestore.instance
+        .collection("Orders")
+        .add(orderInfoMap);
+  }
+
 }
