@@ -1,3 +1,4 @@
+import 'package:dealmart/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:dealmart/widget/support_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -82,16 +83,24 @@ class _ProductCategoryPageState extends State<ProductCategoryPage> {
                           SizedBox(
                             width: 30,
                           ),
-                          Container(
-                              padding: EdgeInsets.all(1),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFFfd6f3e),
-                                  borderRadius: BorderRadius.circular(7)),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 35,
-                              ))
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailsPage(description: 
+                                  ds["Description"], image: ds["Image"], name: ds["Name"], price: ds["Price"])
+                                ),
+                              );
+                            },
+                            child: Container(
+                                padding: EdgeInsets.all(1),
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFfd6f3e),
+                                    borderRadius: BorderRadius.circular(7)),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 35,
+                                )),
+                          )
                         ],
                       )
                     ],

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:dealmart/pages/bottom_nav.dart';
 import 'package:dealmart/pages/home_page.dart';
 import 'package:dealmart/pages/login_page.dart';

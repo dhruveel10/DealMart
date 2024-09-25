@@ -1,8 +1,10 @@
 import 'package:dealmart/widget/support_widget.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ProductDetailsPage extends StatefulWidget {
-  const ProductDetailsPage({super.key});
+  String image, name, description, price;
+  ProductDetailsPage({required this.description, required this.image, required this.name, required this.price});
 
   @override
   State<ProductDetailsPage> createState() => _ProductDetailsPageState();
@@ -32,8 +34,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     child: Icon(Icons.arrow_back_ios_new_outlined)),
               ),
               Center(
-                child: Image.asset(
-                  "images/headphone2.png",
+                child: Image.network(
+                  widget.image,
                   height: 400,
                 ),
               )
@@ -54,11 +56,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Headphone",
+                          widget.name,
                           style: AppWidget.boldTextFieldStyle(),
                         ),
                         Text(
-                          "\$100",
+                          widget.price,
                           style: TextStyle(
                             color: Color(0xFFfd6f3e),
                             fontSize: 23.0,
@@ -71,7 +73,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       height: 20,
                     ),
                     Text(
-                      "Details",
+                      widget.description,
                       style: AppWidget.semiboldTextFieldStyle(),
                     ),
                     SizedBox(

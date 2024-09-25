@@ -25,6 +25,7 @@ class _SignUpPageState extends State<SignUpPage> {
   registration() async {
     if (password != null && name != null && email != null) {
       try {
+        // ignore: unused_local_variable
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email!, password: password!);
 
