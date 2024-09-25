@@ -217,6 +217,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+// ignore: must_be_immutable
 class CategoryTile extends StatelessWidget {
   String image, name;
 
