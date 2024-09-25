@@ -6,12 +6,15 @@ import 'package:dealmart/pages/login_page.dart';
 import 'package:dealmart/pages/onbaording_page.dart';
 import 'package:dealmart/pages/product_details.dart';
 import 'package:dealmart/pages/signup_page.dart';
+import 'package:dealmart/services/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:dealmart/admin/add_product.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = public_key;
   await Firebase.initializeApp();
   runApp(const MyApp());
 }

@@ -1,3 +1,4 @@
+import 'package:dealmart/services/shared_preferences.dart';
 import 'package:dealmart/widget/support_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:dealmart/pages/product_category_page.dart';
@@ -24,11 +25,35 @@ class _HomePageState extends State<HomePage> {
     "Watch",
   ];
 
+  String? name, image;
+
+  getSharedPrefData()async{
+    name = await SharedPreferenceHelper().getUserName();
+    image = await SharedPreferenceHelper().getUserImage();
+
+    setState(() {
+      
+    });
+  } 
+
+  onLoad()async{
+    await getSharedPrefData();
+    setState(() {
+      
+    });
+  }
+
+  @override
+  void initState() {
+    onLoad();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff2f2f2),
-      body: SingleChildScrollView(
+      body: name == null?Center(child: CircularProgressIndicator()): SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
           child: Column(
@@ -41,19 +66,19 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Hey, Dhruveel",
+                        "Hey, ${name!}",
                         style: AppWidget.boldTextFieldStyle(),
                       ),
                       Text(
-                        "Good Morning",
+                        "Let's start shopping!",
                         style: AppWidget.lightTextFieldStyle(),
                       ),
                     ],
                   ),
                   ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "images/boy.jpg",
+                      child: Image.network(
+                        image!,
                         height: 70,
                         width: 70,
                         fit: BoxFit.cover,
