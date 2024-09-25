@@ -1,4 +1,4 @@
-# Dealmart
+# DealMart
 
 • Developed a full-featured E-commerce mobile app using Flutter, integrated with Firebase for real-time database,
 storage, and authentication services.<br>
